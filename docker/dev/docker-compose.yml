@@ -1,0 +1,23 @@
+# *** DEV ***
+
+services:
+  app:
+    image: node:22-alpine
+    container_name: app
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - ../../:/home/node/app
+    ports:
+      - 9229:9229
+    command: ["/bin/sh", "-c", "npm install && npm run build && npm start"]
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: nginx
+    ports:
+      - ${NGINX_PORT}:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app

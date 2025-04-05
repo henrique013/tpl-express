@@ -1,0 +1,26 @@
+{
+  "name": "tpl-express",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Express API bootstrap template.",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist *.tsbuildinfo && tsc",
+    "start": "concurrently --kill-others --names \"tsc,nodemon\" \"tsc --watch\" \"nodemon\""
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.17",
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.8.2"
+  }
+}
