@@ -2,7 +2,7 @@
 
 services:
   app:
-    image: node:22-alpine
+    image: node:22.14.0-alpine3.21
     container_name: app
     user: node
     working_dir: /home/node/app
@@ -13,7 +13,7 @@ services:
     command: ["/bin/sh", "-c", "npm install && npm run build && npm start"]
 
   nginx:
-    image: nginx:1.27-alpine
+    image: nginx:1.27.4-alpine3.21
     container_name: nginx
     ports:
       - ${NGINX_PORT}:80
