@@ -10,11 +10,4 @@ insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
 indent_size = 2
-
-# JavaScript, TypeScript, JSON files
-[*.{js,ts,json}]
-indent_style = space
-
-# YAML files
-[*.{yml,yaml}]
 indent_style = space
